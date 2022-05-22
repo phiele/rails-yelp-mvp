@@ -1,0 +1,15 @@
+<h1>Restaurants</h1>
+<div class="container ps-0 mt-4 col-12">
+  <% @restaurants.each do |restaurant| %>
+    <p class="m-0 fw-bold"><%= link_to restaurant.name, restaurant %>
+      <span class="fw-lighter">(<%= restaurant.category %>)</span>
+      <span>
+        <%= link_to restaurant_path(restaurant.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{restaurant.name}?"} do %>
+          <i class="fa-regular fa-trash-can"></i>
+        <% end %>
+      </span>
+    </p>
+    <p class="fw-lighter"><%= restaurant.address %></p>
+  <% end %>
+</div>
+<%= link_to "+ Add new restaurant", new_restaurant_path, class: "btn btn-primary"%>

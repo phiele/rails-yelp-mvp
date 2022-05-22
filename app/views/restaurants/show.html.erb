@@ -1,0 +1,12 @@
+<h1><%= @restaurant.name %></h1>
+<div class="container ps-0 mt-4 mb-4">
+  <p>Category: <span class="fw-lighter"><%= @restaurant.category %></span></p>
+  <p>Address: <span class="fw-lighter"><%= @restaurant.address %></span></p>
+  <p>Phone number: <span class="fw-lighter"><%= @restaurant.phone_number %></span></p>
+</div>
+<hr>
+<div class="container ps-0">
+  <h5>Reviews:</h5>
+</div>
+<br>
+<%= link_to "Go back to restaurants", restaurants_path %>
