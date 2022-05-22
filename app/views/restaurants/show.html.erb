@@ -7,6 +7,12 @@
 <hr>
 <div class="container ps-0">
   <h5>Reviews:</h5>
+  <ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><span>Rating: <%= review.rating %></span> - <%= review.content %></li>
+  <% end %>
+  <%= link_to "Create a review", new_restaurant_review_path(@restaurant), class: "btn btn-sm btn-primary"%>
+</ul>
 </div>
 <br>
 <%= link_to "Go back to restaurants", restaurants_path %>
